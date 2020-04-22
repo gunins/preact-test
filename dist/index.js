@@ -1930,6 +1930,6 @@
 	}
 	renderToString.shallowRender = shallowRender;
 
-	console.log(renderToString(App({ a: 'a', b: 'b', start: 5 })));
+	console.log(renderToString(createElement(App, { a: 'a', b: 'b', start: 5 })));
 
 }());
