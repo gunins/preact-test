@@ -5,11 +5,6 @@ const includePaths = require('rollup-plugin-includepaths');
 
 const extensions = ['.js', '.mjs', 'jsx', 'ts', 'tsx']
 
-const include = {
-	'preact-render-to-string': './node_modules/preact-render-to-string/src/index',
-	'preact':       './node_modules/preact/src/index',
-	'preact/hooks': './node_modules/preact/hooks/src/index'
-}
 export default {
 	input:    'src/index.ts',
 	output:   {
@@ -19,10 +14,7 @@ export default {
 	},
 	external: [],
 	plugins:  [
-		includePaths({
-			include,
-			extensions
-		}),
+		resolve(),
 		commonjs({
 			extensions
 		}),
